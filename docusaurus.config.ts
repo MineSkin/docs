@@ -5,20 +5,20 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: 'My Site',
+  title: 'MineSkin Docs',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.mineskin.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'MineSkin', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -65,7 +65,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'MineSkin Docs',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -77,9 +77,14 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
+        {
+          to: '/docs/category/mineskin-api',
+          label: 'API Reference',
+          position: 'left'
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/MineSkin',
           label: 'GitHub',
           position: 'right',
         },
@@ -123,12 +128,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/MineSkin',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} inventivetalent. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -145,7 +150,7 @@ const config: Config = {
         config: {
           mineskin: {
             specPath: "spec/openapi.json",
-            outputDir: "docs/mineskin",
+            outputDir: "docs/mineskin-api",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
