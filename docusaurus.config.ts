@@ -109,6 +109,10 @@ const config: Config = {
                         {
                             label: 'API Reference',
                             to: '/docs/category/mineskin-api',
+                        },
+                        {
+                            label: 'V1 API Reference',
+                            to: 'https://rest.wiki/?https://api.mineskin.org/openapi.yml',
                         }
                     ],
                 },
