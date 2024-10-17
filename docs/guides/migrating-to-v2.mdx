@@ -1,0 +1,119 @@
+---
+id: migrating-to-v2
+title: Migrating to V2
+---
+
+import Column from "../../src/components/Column";
+import Columns from "../../src/components/Columns";
+import CodeBlock from '@theme/CodeBlock';
+
+The MineSkin API V2 introduces some changes to how skins are generated. This guide will outline the most important changes to help you migrate to the new endpoints.
+
+## Changes
+
+### Queue System
+
+The new API uses a queue system to handle skin generation requests.
+This means instead of making a request and receiving back the skin data after a few seconds, you will now receive the ID of a [queued job](/docs/mineskin-api/queue-skin-generation) which you can periodically [check the status](http://localhost:3000/docs/mineskin-api/get-job-status) of.
+
+### Response Changes
+
+
+### Skin Generation Response
+
+<Columns>
+    <Column className='col--6'>
+        V1 Response
+        <CodeBlock language="json">
+            {`{
+    "id": 1045962434,
+    "idStr": "1045962434",
+    "uuid": "d3e63217abb442f5af6cd515d02e3b6e",
+    "hash": "093d83daa385a423e0ad13bcafe059c2eb0b0a53",
+    "name": "cool skin",
+    "model": "steve",
+    "variant": "classic",
+    "data": {
+        "uuid": "4d2731c7-7e7a-4b32-9514-4eb8784408cc",
+        "texture": {
+            "value": "ewogIC...H0KICB9Cn0=",
+            "signature": "YpcyLNC/c8gg45d...080EoKOA=",
+            "url": "http://textures.minecraft.net/texture/1...003b4",
+            "urls": {
+                "skin": "http://textures.minecraft.net/texture/103c20c...b4"
+            }
+        }
+    },
+    "timestamp": 1729157818,
+    "duration": 2056,
+    "accountId": 1271,
+    "account": 1271,
+    "server": "avocado",
+    "private": false,
+    "views": 0,
+    "duplicate": false,
+    "nextRequest": 2,
+    "delayInfo": {
+        "millis": 2000,
+        "seconds": 2
+    },
+    "warnings": []
+}`}
+        </CodeBlock>
+    </Column>
+    <Column className='col--6'>
+        V2 Response
+        <CodeBlock language="json">
+            {`{
+    "success": true,
+    "skin": {
+        "uuid": "9c7b6f5f285c4c5b9b1ca4be73fa857b",
+        "visibility": "public",
+        "variant": "classic",
+        "name": "cool skin",
+        "texture": {
+            "data": {
+                "value": "ewogI...CB9CiAgfQp9",
+                "signature": "wk7AdG2gmQYz7...sq6biLS3RxdqphmII="
+            },
+            "hash": {
+                "skin": "103c...836c003b4"
+            },
+            "url": {
+                "skin": "https://textures.minecraft.net/texture/103c20c...003b4"
+            }
+        },
+        "generator": {
+            "timestamp": 1728658625018,
+            "account": "b74eb5b1...56f01",
+            "server": "nugget",
+            "worker": "nugget",
+            "version": "unknown",
+            "duration": 2343
+        },
+        "views": 0,
+        "duplicate": true
+    },
+    "rateLimit": {
+        "next": {
+            "absolute": 1729157756450,
+            "relative": 0
+        },
+        "delay": {
+            "millis": 2000,
+            "seconds": 2
+        },
+        "limit": {
+            "limit": 20,
+            "remaining": 20
+        }
+    },
+    "warnings": [],
+    "messages": [],
+    "links": {
+        "skin": "/v2/skins/9c7b6f5f285c4c5b9b1ca4be73fa857b"
+    }
+}`}
+        </CodeBlock>
+    </Column>
+</Columns>

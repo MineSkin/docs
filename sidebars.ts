@@ -16,8 +16,10 @@ const sidebars: SidebarsConfig = {
 
   apiSidebar: [
     {
+      //id: "mineskin-api/mineskin-api",
       type: "category",
       label: "MineSkin API",
+      // href: "/category/mineskin-api"
       link: {
         type: "generated-index",
         title: "MineSkin API",

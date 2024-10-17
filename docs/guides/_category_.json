@@ -1,0 +1,8 @@
+{
+  "label": "Guides",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Various Guides on how to use MineSkin and its API"
+  }
+}

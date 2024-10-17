@@ -36,8 +36,8 @@ const sidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "mineskin-api/get-the-status-of-a-generator-job",
-          label: "Get the status of a generator job",
+          id: "mineskin-api/get-job-status",
+          label: "Get Job Status",
           className: "api-method get",
         },
       ],
