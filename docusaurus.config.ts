@@ -6,7 +6,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
     title: 'MineSkin Docs',
-    tagline: 'Dinosaurs are cool',
+    tagline: 'Minecraft Skin Data Generator',
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here
@@ -81,7 +81,7 @@ const config: Config = {
                     type: 'docSidebar',
                     sidebarId: 'tutorialSidebar',
                     position: 'left',
-                    label: 'Tutorial',
+                    label: 'Documentation',
                 },
                 {
                     to: '/docs/category/mineskin-api',
