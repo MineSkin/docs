@@ -9,11 +9,17 @@ import CodeBlock from '@theme/CodeBlock';
 
 The MineSkin API V2 introduces some changes to how skins are generated. This guide will outline the most important changes to help you migrate to the new endpoints.
 
+
+## Try V2 Now
+
+To try out the new API without making changes to your existing code, you can enable the compatibility layer on V1 endpoints. This will act as a proxy to the new API and its features while retaining the old request and response format.<br/>
+To enable the compatibility, pass `?v2=true` as a query parameter on the `/generate` endpoints. Alternatively you can enable compatibility for all requests made by your API key in the [API key settings](https://account.mineskin.org/keys).
+
 ## Changes
 
 ### Queue System
 
-The new API uses a queue system to handle skin generation requests.
+The new API uses a queue system to handle skin generation requests.<br/>
 This means instead of making a request and receiving back the skin data after a few seconds, you will now receive the ID of a [queued job](../mineskin-api/queue-skin-generation) which you can periodically [check the status](../mineskin-api/get-job-status) of.
 
 ### Response Changes
