@@ -73,7 +73,7 @@ const config: Config = {
         navbar: {
             title: 'MineSkin Docs',
             logo: {
-                alt: 'My Site Logo',
+                alt: 'MineSkin Logo',
                 src: 'img/logo.svg',
             },
             items: [
