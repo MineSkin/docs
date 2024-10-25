@@ -1,19 +1,12 @@
 ---
-id: migrating-to-v2
-title: Migrating to V2
+id: v2-changes
+title: V2 Changes
 ---
 
-import Column from "../../src/components/Column";
-import Columns from "../../src/components/Columns";
+import Column from "../../../src/components/Column";
+import Columns from "../../../src/components/Columns";
 import CodeBlock from '@theme/CodeBlock';
 
-The MineSkin API V2 introduces some changes to how skins are generated. This guide will outline the most important changes to help you migrate to the new endpoints.
-
-
-## Try V2 Now
-
-To try out the new API without making changes to your existing code, you can enable the compatibility layer on V1 endpoints. This will act as a proxy to the new API and its features while retaining the old request and response format.<br/>
-To enable the compatibility, pass `?v2=true` as a query parameter on the `/generate` endpoints. Alternatively you can enable compatibility for all requests made by your API key in the [API key settings](https://account.mineskin.org/keys).
 
 ## Changes
 
@@ -22,16 +15,16 @@ To enable the compatibility, pass `?v2=true` as a query parameter on the `/gener
 The new API uses a queue system to handle skin generation requests.<br/>
 This means instead of making a request and receiving back the skin data after a few seconds, you will now receive the ID of a [queued job](../mineskin-api/queue-skin-generation) which you can periodically [check the status](../mineskin-api/get-job-status) of.
 
+
 ### Response Changes
 
-
-### Skin Generation Response
+#### Skin Generation Response
 
 <Columns>
     <Column className='col--6'>
         V1 Response
         <CodeBlock language="json">
-            {`{
+            { `{
     "id": 1045962434,
     "idStr": "1045962434",
     "uuid": "d3e63217abb442f5af6cd515d02e3b6e",
@@ -64,13 +57,13 @@ This means instead of making a request and receiving back the skin data after a 
         "seconds": 2
     },
     "warnings": []
-}`}
+}` }
         </CodeBlock>
     </Column>
     <Column className='col--6'>
         V2 Response
         <CodeBlock language="json">
-            {`{
+            { `{
     "success": true,
     "skin": {
         "uuid": "9c7b6f5f285c4c5b9b1ca4be73fa857b",
@@ -119,7 +112,19 @@ This means instead of making a request and receiving back the skin data after a 
     "links": {
         "skin": "/v2/skins/9c7b6f5f285c4c5b9b1ca4be73fa857b"
     }
-}`}
+}` }
         </CodeBlock>
     </Column>
 </Columns>
+
+
+
+### Relaxed rate limits and credits
+
+V2 aims to make using the API and skin generation requests in general a bit easier by shifting more of the delays and rate limits away from clients.
+So fixed delays between requests have been (mostly) replaced by “classic” rate limits, e.g. 5 requests per 10 seconds.
+
+Additionally, there is now a credits system which allows you generate skins faster.
+You are automatically granted 100 free credits per month with an additional 10 credits per day.
+Each new skin generation uses up 1 credit.
+But don't worry: if you use up all your credits, you can still generate skins, but your requests are given a lower priority and will take longer to complete.

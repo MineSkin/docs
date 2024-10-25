@@ -7,6 +7,9 @@ title: Getting Started
 
 To use the MineSkin API you will need to create an account and obtain an API key.  
 Create an account at [account.mineskin.org](https://account.mineskin.org/) and then manage your API keys at [account.mineskin.org/keys](https://account.mineskin.org/keys).  
+  
+If you previously used MineSkin V1, read the [migration guide](./migrating-to-v2) to learn about the changes in V2.  
+Otherwise, you can start using the API by reading the [API documentation](../mineskin-api/mineskin-api).
 
 
 ## API Key
