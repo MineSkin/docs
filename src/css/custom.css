@@ -81,3 +81,18 @@
   content: "head";
   background-color: var(--ifm-color-secondary-darkest);
 }
+
+
+/* inline endpoints */
+.inline-endpoint {
+  display: inline-block;
+}
+
+.inline-endpoint pre.openapi__method-endpoint {
+  padding: 0.2rem;
+  margin: 0;
+}
+
+.inline-endpoint  .openapi__divider {
+  display: none;
+}

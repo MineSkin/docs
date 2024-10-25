@@ -3,9 +3,7 @@ id: migrating-to-v2
 title: Migrating to V2
 ---
 
-import Column from "../../../src/components/Column";
-import Columns from "../../../src/components/Columns";
-import CodeBlock from '@theme/CodeBlock';
+import CustomMethodEndpoint from "../../../src/components/CustomMethodEndpoint";
 
 The MineSkin API V2 introduces some changes to how skins are generated. This guide will outline the most important changes to help you migrate to the new endpoints.
 
@@ -18,19 +16,19 @@ To enable the compatibility, pass `?v2=true` as a query parameter on the `/gener
 
 ## Migrate to V2
 
-* For the most basic migration, simply exchange <code>POST /generate/upload</code> (or /url, /user) with [`POST /v2/generate`](../mineskin-api/generate-a-skin).
-  * If you use custom visibility settings, make sure to exchange the IDs with strings so `public` instead of `0` and `unlisted` instead of `1`.
-  * Note: if you also still use the legacy skin model names, those need to be either `classic` or `slim` in V2 (or simply omit it to automatically detect the variant).
+* For the most basic migration, simply exchange <CustomMethodEndpoint method={ "POST" } path={ "/generate/upload" }/> (or /url, /user)
+with <a href="/docs/mineskin-api/generate-a-skin"><CustomMethodEndpoint method={ "POST" } path={ "/v2/generate" }/></a>
+* If you use custom visibility settings, make sure to exchange the IDs with strings so `public` instead of `0` and `unlisted` instead of `1`.
+* Note: if you also still use the legacy skin model names, those need to be either `classic` or `slim` in V2 (or simply omit it to automatically detect the variant).
 * Finally, adjust your response parsing to use the new JSON structure - see the comparison in [V2 Changes](./v2-changes).
 * **Most importantly**, skin value and signature is moved from `data.texture.value` to `skin.texture.data.value`.
-See [`POST /v2/generate`](../mineskin-api/generate-a-skin) for details.
+See [`POST /v2/generate`](/docs/mineskin-api/generate-a-skin) for details.
 <br/>
 
 
-* To also make use of the new queue system, make the request and response changes above but adjust your code to first call POST [`POST /v2/queue`](../mineskin-api/queue-skin-generation)
-and then check [`GET /queue/:jobId`](../mineskin-api/get-job-status) once every few seconds until the job is `completed` (or `failed`).
-  * Note: if you queue a lot of jobs, you can also use the `GET /queue` endpoint to list all jobs and their status to avoid getting rate-limited.
+* To also make use of the new queue system, make the request and response changes above but adjust your code to first call POST [`POST /v2/queue`](/docs/mineskin-api/queue-skin-generation)
+and then check [`GET /queue/:jobId`](/docs/mineskin-api/get-job-status) once every few seconds until the job is `completed` (or `failed`).
+* Note: if you queue a lot of jobs, you can also use the `GET /queue` endpoint to list all jobs and their status to avoid getting rate-limited.
 
 <hr/>
-
 
