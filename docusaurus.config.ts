@@ -40,6 +40,7 @@ const config: Config = {
                     docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
                     docRootComponent: "@theme/DocRoot", // add @theme/DocRoot
                     include: ['**/*.md', '**/*.mdx'],
+                    editUrl: 'https://github.com/MineSkin/docs/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
