@@ -155,8 +155,51 @@ const config: Config = {
         },
         prism: {
             theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
+            darkTheme: prismThemes.dracula
         },
+        languageTabs: [
+            {
+                highlight: "java",
+                language: "java",
+                logoClass: "java",
+                variant: "unirest",
+            },
+            {
+                highlight: "javascript",
+                language: "javascript",
+                logoClass: "javascript",
+            },
+            {
+                highlight: "python",
+                language: "python",
+                logoClass: "python",
+            },
+            {
+                highlight: "bash",
+                language: "curl",
+                logoClass: "curl",
+            },
+            {
+                highlight: "javascript",
+                language: "nodejs",
+                logoClass: "nodejs",
+            },
+            {
+                highlight: "php",
+                language: "php",
+                logoClass: "php",
+            },
+            {
+                highlight: "kotlin",
+                language: "kotlin",
+                logoClass: "kotlin",
+            },
+            {
+                highlight: "rust",
+                language: "rust",
+                logoClass: "rust",
+            },
+        ],
     } satisfies Preset.ThemeConfig,
 
     plugins: [
