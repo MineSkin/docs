@@ -40,6 +40,7 @@ const config: Config = {
                     docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
                     docRootComponent: "@theme/DocRoot", // add @theme/DocRoot
                     include: ['**/*.md', '**/*.mdx'],
+                    editUrl: 'https://github.com/MineSkin/docs/tree/main/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -47,10 +48,6 @@ const config: Config = {
                         type: ['rss', 'atom'],
                         xslt: true,
                     },
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                     // Useful options to enforce blogging best practices
                     onInlineTags: 'warn',
                     onInlineAuthors: 'warn',
@@ -58,6 +55,10 @@ const config: Config = {
                 },
                 theme: {
                     customCss: './src/css/custom.css',
+                },
+                gtag: {
+                    trackingID: 'G-XXNGT0HQ7T',
+                    anonymizeIP: true,
                 },
             } satisfies Preset.Options,
         ],
