@@ -66,6 +66,20 @@
       }
     },
     "responses": {
+      "ForbiddenErrorResponse": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ErrorResponseBody"
+                }
+              ]
+            }
+          }
+        }
+      },
       "GenerateErrorResponse": {
         "description": "Generator Error",
         "content": {
@@ -495,6 +509,223 @@
             "type": "number",
             "description": "Remaining requests in the current window. Same as the 'X-RateLimit-Remaining' header",
             "example": 58
+          }
+        }
+      },
+      "MeClientInfo": {
+        "type": "object",
+        "required": [
+          "client"
+        ],
+        "properties": {
+          "client": {
+            "type": "object",
+            "description": "Client information",
+            "properties": {
+              "agent": {
+                "type": "string",
+                "description": "Client User-Agent",
+                "example": "PostmanRuntime"
+              },
+              "key": {
+                "type": "string",
+                "description": "ID of the API key used for this request",
+                "example": "21702ac21ab744d32b004fe0"
+              },
+              "user": {
+                "type": "string",
+                "description": "User ID",
+                "example": "ef4c52b01fea4715982d8e67fd93ef2d"
+              },
+              "ip": {
+                "type": "string",
+                "description": "Client IP address",
+                "example": "12.34.56.789"
+              },
+              "billable": {
+                "type": "boolean",
+                "description": "Whether the client is billable (i.e. has a paid plan)",
+                "example": false
+              }
+            },
+            "example": {
+              "agent": "PostmanRuntime",
+              "key": "21702ac21ab744d32b004fe0",
+              "user": "ef4c52b01fea4715982d8e67fd93ef2d",
+              "ip": "12.34.56.789",
+              "billable": false
+            }
+          }
+        }
+      },
+      "MeCreditsInfo": {
+        "type": "object",
+        "required": [
+          "credit"
+        ],
+        "properties": {
+          "credit": {
+            "type": "object",
+            "description": "Credits information",
+            "properties": {
+              "current": {
+                "description": "Current credits used for this API key. May be empty if the API key has no credits (see returned warnings).",
+                "type": "object",
+                "required": [
+                  "type",
+                  "balance",
+                  "total"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of credits",
+                    "example": "paid"
+                  },
+                  "balance": {
+                    "type": "number",
+                    "description": "Current balance",
+                    "example": 397
+                  },
+                  "total": {
+                    "type": "number",
+                    "description": "Total credits",
+                    "example": 500
+                  }
+                }
+              },
+              "all": {
+                "description": "All credits available for the current user",
+                "type": "object",
+                "required": [
+                  "balance",
+                  "total"
+                ],
+                "properties": {
+                  "balance": {
+                    "type": "number",
+                    "description": "Total balance",
+                    "example": 5839
+                  },
+                  "total": {
+                    "type": "number",
+                    "description": "Total credits",
+                    "example": 10000
+                  }
+                }
+              }
+            },
+            "example": {
+              "current": {
+                "type": "paid",
+                "balance": 397,
+                "total": 500
+              },
+              "all": {
+                "balance": 5839,
+                "total": 10000
+              }
+            }
+          }
+        }
+      },
+      "MeInfo": {
+        "type": "object",
+        "required": [
+          "user",
+          "grants"
+        ],
+        "properties": {
+          "user": {
+            "type": "string",
+            "description": "User UUID",
+            "example": "ef4c52b01fea4715982d8e67fd93ef2d"
+          },
+          "grants": {
+            "type": "object",
+            "description": "Grants for this user",
+            "example": {
+              "delay": 3,
+              "per_minute": 20,
+              "concurrency": 1,
+              "priority": 0,
+              "ad_free": true,
+              "private_skins": true
+            }
+          }
+        }
+      },
+      "MeKeyInfo": {
+        "type": "object",
+        "required": [
+          "key"
+        ],
+        "properties": {
+          "key": {
+            "type": "object",
+            "description": "API Key information",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "API Key ID",
+                "example": "21702ac21ab744d32b004fe0"
+              },
+              "name": {
+                "type": "string",
+                "description": "API Key name",
+                "example": "Test Key"
+              },
+              "user": {
+                "type": "string",
+                "description": "User ID",
+                "example": "ef4c52b01fea4715982d8e67fd93ef2d"
+              },
+              "createdAt": {
+                "type": "string",
+                "description": "Creation date",
+                "example": "2022-11-01T18:06:58.634Z"
+              },
+              "allowedOrigins": {
+                "type": "array",
+                "description": "Allowed origins for this API key",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "allowedIps": {
+                "type": "array",
+                "description": "Allowed IPs for this API key",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "allowedAgents": {
+                "type": "array",
+                "description": "Allowed User-Agents for this API key",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "useCredits": {
+                "type": "boolean",
+                "description": "Whether this API key uses paid credits",
+                "example": true
+              }
+            },
+            "example": {
+              "id": "21702ac21ab744d32b004fe0",
+              "name": "Test Key",
+              "user": "ef4c52b01fea4715982d8e67fd93ef2d",
+              "createdAt": "2022-11-01T18:06:58.634Z",
+              "allowedOrigins": [],
+              "allowedIps": [
+                "12.34.56.789"
+              ],
+              "allowedAgents": [
+                "MineSkin-Test-App"
+              ],
+              "useCredits": true
+            }
           }
         }
       },
@@ -1137,6 +1368,146 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/v2/me": {
+      "get": {
+        "summary": "Get the current user",
+        "description": "Get information about the current user (i.e. the user associated with the API key)",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAgent"
+          },
+          {
+            "$ref": "#/components/parameters/apiKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeInfo"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/me/apikey": {
+      "get": {
+        "summary": "Get the current API key",
+        "description": "Get information about the API key used for this request",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAgent"
+          },
+          {
+            "$ref": "#/components/parameters/apiKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Key Info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeKeyInfo"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/me/client": {
+      "get": {
+        "summary": "Get the current client",
+        "description": "Get information about the current client",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAgent"
+          },
+          {
+            "$ref": "#/components/parameters/apiKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client Info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeClientInfo"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/me/credits": {
+      "get": {
+        "summary": "Get user credits",
+        "description": "Get information about the current user's credits",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAgent"
+          },
+          {
+            "$ref": "#/components/parameters/apiKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Credits Info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeCreditsInfo"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/ForbiddenErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundErrorResponse"
           }
         }
       }

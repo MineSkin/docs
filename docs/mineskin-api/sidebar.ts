@@ -72,6 +72,36 @@ const sidebar: SidebarsConfig = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "user",
+      items: [
+        {
+          type: "doc",
+          id: "mineskin-api/get-the-current-user",
+          label: "Get the current user",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "mineskin-api/get-the-current-api-key",
+          label: "Get the current API key",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "mineskin-api/get-the-current-client",
+          label: "Get the current client",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "mineskin-api/get-user-credits",
+          label: "Get user credits",
+          className: "api-method get",
+        },
+      ],
+    },
   ],
 };
 
