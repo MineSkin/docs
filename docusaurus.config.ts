@@ -162,8 +162,7 @@ const config: Config = {
             {
                 highlight: "java",
                 language: "java",
-                logoClass: "java",
-                variant: "unirest",
+                logoClass: "java"
             },
             {
                 highlight: "javascript",
