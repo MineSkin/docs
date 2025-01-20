@@ -1,0 +1,8 @@
+{
+  "label": "Wiki",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "General information about MineSkin and its API"
+  }
+}
