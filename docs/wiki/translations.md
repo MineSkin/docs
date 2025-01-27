@@ -16,3 +16,5 @@ You can help to translate the MineSkin.org website via Crowdin: https://crowdin.
 * shiroyashik
 ### Spanish
 * LeLiock
+### Italian
+* Pingoda
