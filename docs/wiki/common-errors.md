@@ -40,6 +40,15 @@ No skin file was provided in the request.
 Make sure to include a skin file in the request and try again.  
 The file should be sent as a `file` field in a `multipart/form-data` request. See [invalid_content_type](#invalid_content_type) above for potential issues with the content type.
 
+### invalid_api_key {#invalid_api_key}
+The API key you provided is not valid. The error message should contain more information about what is wrong with the API key.  
+* `Client not allowed`: You configured your API to only allow requests from specific IPs, but the request did not come from one of those IPs.
+* `Origin not allowed`: You configured your API to only allow requests from specific web origins, but the request did not come from one of those origins.
+* `Agent not allowed`: You configured your API to only allow requests from specific user agents, but the request did not come from one of those user agents.
+
+#### Solution
+Make sure to provide a valid API key in the `Authorization` header and try again.
+
 ### validation_error {#validation_error}
 The request contains invalid or missing parameters. The error message should contain more information about what is wrong with the request.
 #### Solution
