@@ -1,0 +1,243 @@
+---
+id: get-a-list-of-known-capes
+title: "Get a list of known capes"
+description: "Get a list of known capes"
+sidebar_label: "Get a list of known capes"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVk1z2zYQ/SsYXBLPUCJFiRLFU9XEk3Eap5k6OSk+LIGlhJgEGABko2r03ztLipZku5keeqkuknaXbz/w9hF7LtEJq2qvjOYZf4eeASuV88wU7EGbPzUTUKPjAfewcTxb8/7/fcBrsFChR0vmPddQIc/4F4d2tNqg9jx4gv6mcd5U7BTBCmPZzjSWQV2XSgAFBswhsnVDUUBRY4nt/eut97XLwvDSHl51GKqqS6xQ+w6B4Q8ggxuzVenRavCqxXJHqZgAzaB0hjUOmd8ie3WrNN49KD06FfaKbREk2jEP+BGMZ/y6/7Wq67CdjCMecEVt9aE84Ba/N8qi5Jm3DQbciS1WwLM997uaAJy3Sm/44RA8jmvV+K2x6q+u8GcTW326YQ+4Y4U1FVuDEKbRflwpje5B6bGxm9NgXvKGD7hzVxdN/Ipg0TIJ6UxiGuNyHsm5iJJJFKVpvFimi1QsltN5AjKZTFI5TSI5nyyLOJrGM0hmy1kxSeb5s+b/udl7moyrjXboyB9HEX094QbUyD4oR6wRRnviT7bnZ7wIvzmK3J9lOg38nJbW1Gi96pP15lNVYC3sqHiP1bnd5N9Q+ItDXPOmUZIHHEoFtAGNLZ8n6GKedz089ZKHcF6yu6aujfV4jpcbUyJo4szpEIesHIslLpN8PpqlMB3NCrkYLadyNlrgQi5ns1TGxeSxgYxPEr9lK61Vi9aB3R17yjhxKAtDjz98Y9F1HBIWCj/W6AdzKORSpjHkk0Uhl3EUxzKXM0jnQuJMTNMYFskswslkUQAu8iXEaTKdJ2kSJZBG8zjhFy3SjhwC7pXvePkbiQ2xgB+On4BX6LeG+twgHU0NfsszHrZxOIiSQ9sOAnRqpVuHWl2sAiceOhSNVX7XxefdJtAC8mx9f+6+I4b1x3se9JSzw3b2O8BGjOSzk7P/ZGePDKDYYb86RnQVdYRQujAdV44zHJSMrT7d8IDTZPpK43HU6dWTnSsVifCleLqMrd9DC6ciN8pvm3wsTBXe6BY1iamHErV/i214eyy9B7tiX/X6o5H4/u7fAgy9j0SP8FV/1Wx91Fr3IsrQZzgIff/QUTpAdNIxCOynG3bXs+6C7gQplRPGyvFmE75F/NhMxZdbmjVWoCiO5vvLJYkCXiqB2uFZitubz8+gX6r2KSXDvDR5WIHzaMMPN2+uP95dUwaPtnK/F3doWyXwDLTEDZRjdTnDDql75HGUBFIb5yvQZ2X+7OV+QYz9SYF/fiPoCUryENYl9HmP4tbv6pq3MZ3KoM1b4zxZ9/scHH6x5eFA5u8NWtrJ+4C3YBXkxOb1/SEYXi+0rlI5ckieFVA6/EnNr/84avgV+39eOV4c7APunl6vWigbCuR0oej9KyGwPvc9e4OS0D0K67vrz/xw+BsWsm5Y
+sidebar_class_name: "get api-method"
+info_path: docs/mineskin-api/mineskin-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a list of known capes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/capes"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a list of known capes
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Header Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"User-Agent","description":"Custom User-Agent for your application, see [user-agent.dev](https://user-agent.dev/) for implementation examples. Alternatively you can also use the 'MineSkin-User-Agent' header.","example":"ExampleApp/v1.0","in":"header","required":true,"schema":{"type":"string"},"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"Authorization","description":"API key from [account.mineskin.org](https://account.mineskin.org/keys)","example":"Bearer da84de82e960d6c0510088279878c79365ad5118d350d619f20324a5494f156b","in":"header","schema":{"type":"string"},"enumDescriptions":[]}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Cape List
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                capes
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object[]
+                              </span><span
+                                className={"openapi-schema__divider"}
+                              >
+                                
+                              </span><span
+                                className={"openapi-schema__required"}
+                              >
+                                required
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                              >
+                                Array [
+                              </div>
+                            </li><SchemaItem
+                              collapsible={false}
+                              name={"uuid"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"alias"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"url"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"string"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"supported"}
+                              required={false}
+                              schemaName={"boolean"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"boolean"}}
+                            >
+                              
+                            </SchemaItem><li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                              >
+                                ]
+                              </div>
+                            </li>
+                          </div>
+                        </details>
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"capes\": [\n    {\n      \"uuid\": \"ef9e95b6-48a3-4fd7-93d4-7e7d9448d2f1\",\n      \"alias\": \"15th Anniversary\",\n      \"url\": \"http://textures.minecraft.net/texture/cd9d82ab17fd92022dbd4a86cde4c382a7540e117fae7b9a2853658505a80625\",\n      \"supported\": true\n    }\n  ]\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

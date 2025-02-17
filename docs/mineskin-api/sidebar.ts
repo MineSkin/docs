@@ -74,6 +74,18 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "capes",
+      items: [
+        {
+          type: "doc",
+          id: "mineskin-api/get-a-list-of-known-capes",
+          label: "Get a list of known capes",
+          className: "api-method get",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "user",
       items: [
         {
