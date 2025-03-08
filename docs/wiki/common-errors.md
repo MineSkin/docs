@@ -16,6 +16,7 @@ The URL you provided does not point to a valid image. The error message should c
 This commonly happens if you use a URL that points to a webpage instead of an image file (e.g. https://imgur.com/k8W9wJ0 instead of https://i.imgur.com/k8W9wJ0.png).
 #### Solution
 Make sure the URL points to a valid image and try again.  
+If you are requesting an image from your own server, make sure it also handles `HEAD` requests correctly.
 
 ### invalid_user {#invalid_user}
 The user you provided does not exist or is not valid. 
