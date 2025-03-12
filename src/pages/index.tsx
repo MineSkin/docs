@@ -20,13 +20,18 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg margin--md"
             to="/docs/guides/getting-started">
-            Getting Started
+            Getting Started 🚀
           </Link>
-            <Link
-                className="button button--secondary button--lg margin--md"
-                to="/docs/category/mineskin-api">
-                API Reference 📃
-            </Link>
+          <Link
+              className="button button--secondary button--lg margin--md"
+              to="/docs/category/mineskin-api">
+              API Reference 📃
+          </Link>
+          <Link
+              className="button button--secondary button--lg margin--md"
+              to="/docs/category/wiki">
+              Wiki 📚
+          </Link>
         </div>
       </div>
     </header>
