@@ -90,9 +90,10 @@ them to the public API to help out everyone using it in terms of speed and relia
 
 ## Credits / Subscriptions
 
-### What is a speed credit?
+### What is a credit?
 
-1 credit corresponds to 1 newly generated skin. Speed credits allow you to generate skins faster.
+1 credit corresponds to 1 newly generated skin. Credits give your requests priority, meaning your request will be processed faster.  
+If you run out of credits, you can still generate skins, but at a slower rate.
 
 ### What else are credits used for?
 
