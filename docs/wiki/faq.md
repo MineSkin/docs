@@ -1,6 +1,7 @@
 # Frequently Asked Questions
 
 Jump to:
+
 - [General FAQ](#general)
 - [API FAQ](#api)
 - [Credits / Subscriptions FAQ](#credits--subscriptions)
@@ -92,8 +93,13 @@ them to the public API to help out everyone using it in terms of speed and relia
 
 ### What is a credit?
 
-1 credit corresponds to 1 newly generated skin. Credits give your requests priority, meaning your request will be processed faster.  
+1 credit corresponds to 1 newly generated skin. Credits give your requests priority, meaning your request will be
+processed faster.  
 If you run out of credits, you can still generate skins, but at a slower rate.
+
+### Do I need credits to generate skins?
+
+No, you can generate skins without credits. However, you will be limited to a slower rate of skin generation.
 
 ### What else are credits used for?
 
