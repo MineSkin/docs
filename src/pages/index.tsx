@@ -34,7 +34,7 @@ function HomepageHeader() {
                     </Link>
                     <Link
                         className="button button--secondary button--lg margin--md"
-                        to="/docs/category/wiki/faq">
+                        to="/docs/wiki/faq">
                         FAQ ❓
                     </Link>
                 </div>
