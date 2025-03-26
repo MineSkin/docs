@@ -125,6 +125,10 @@ const config: Config = {
                             href: 'https://discord.gg/DeeNu3cUMp',
                         },
                         {
+                            label: 'Bluesky',
+                            href: 'https://bsky.app/profile/mineskin.org'
+                        },
+                        {
                             label: 'Twitter',
                             href: 'https://twitter.com/MineSkinOrg',
                         },
