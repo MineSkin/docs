@@ -4,7 +4,7 @@ Jump to:
 
 - [General FAQ](#general)
 - [API FAQ](#api)
-- [Credits / Subscriptions FAQ](#credits--subscriptions)
+- [Subscriptions FAQ](#credits--subscriptions)
 
 ## General
 
@@ -89,53 +89,16 @@ them to the public API to help out everyone using it in terms of speed and relia
 - you find yourself needing to generate more skins than the public API allows.
 - you can't afford a subscription or credits but need to generate a lot of skins.
 
-## Credits / Subscriptions
 
-### What is a credit?
-
-1 credit corresponds to 1 newly generated skin. Credits give your requests priority, meaning your request will be
-processed faster.  
-If you run out of credits, you can still generate skins, but at a slower rate.
-
-### Do I need credits to generate skins?
-
-No, you can generate skins without credits. However, you will be limited to a slower rate of skin generation.
-
-### What else are credits used for?
-
-Credits are only used when generating skins currently.
-
-### What happens if I run out of credits?
-
-If you run out of credits, you can still generate skins, but at a slower rate. If you use up your purchased credits, you
-start using your free credits.
-
-### When do the daily credits reset?
-
-On the free plan, you get 10 credits per day. These refresh 24 hours after generating the first skin. If you do not
-generate skins for more than 24 hours, the reset period will restart when you generate the next skin.
-
-### How do the monthly credits work?
-
-Once you've used up your daily credits, you begin to use up your 100 free monthly credits. These reset one month after
-you first generate a skin.
-
-### Do purchased credits expire?
-
-No, purchased credits do not expire. However, credits granted as part of a monthly/yearly subscription will reset one
-month/year after the subscription starts.
-
-### Are there other ways to get credits?
-
-Currently, you can only purchase individual credits or subscriptions. This may change in the future. Please reach out if
-you require more credits.
+## Subscriptions
 
 ### How does the rate limit work?
 
-Depending on your plan, you can generate a certain number of new skins per minute. For example, when using free credits,
-you can generate up to 30 skins per minute (1 skin every 2 seconds).
+Depending on your plan, you can generate a certain number of new skins per minute. For example, on the free plan,
+you can generate up to 20 skins per minute (1 skin every 3 seconds).
 
-### How do I use my credits or subscription?
+### How do I use my subscription?
 
-To use your credits or faster request speed, head to the API Keys page and assign your subscription or credits to the
+Your subscription automatically applies to requests made on the website.
+To use your subscription on API requests, head to the API Keys page and assign your subscription to the
 key you want to use. Then simply use the key in your requests.
