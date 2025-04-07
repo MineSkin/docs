@@ -8,6 +8,7 @@ You can help to translate the MineSkin.org website via Crowdin: https://crowdin.
 * LeLiock
 ### German
 * LeLiock
+* Ubivis
 ### Polish
 * Kamil (kamil445)
 ### Portuguese
@@ -18,3 +19,6 @@ You can help to translate the MineSkin.org website via Crowdin: https://crowdin.
 * LeLiock
 ### Italian
 * Pingoda
+### Chinese Traditional
+* TWME
+* notlin4
