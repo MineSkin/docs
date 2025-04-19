@@ -4,7 +4,7 @@ Jump to:
 
 - [General FAQ](#general)
 - [API FAQ](#api)
-- [Subscriptions FAQ](#credits--subscriptions)
+- [Subscriptions FAQ](#subscriptions)
 
 ## General
 
@@ -41,9 +41,7 @@ not require any manual intervention.
 
 ### How can I generate skins faster?
 
-Make sure you are logged in to your account and have credits available.
-If you run out of credits, skins will be generated at a slower rate. You can purchase more credits or a subscription to
-generate skins faster.
+You can upgrade your account on the [Store](https://account.mineskin.org/store) to generate skins faster and support MineSkin's development.
 
 ### How can I help to make generating skins faster?
 
@@ -71,8 +69,8 @@ You can find the API documentation and more information on the [MineSkin Docs](h
 
 Yes. This is largely due to the upstream rate limits imposed by Mojang. MineSkin has its own rate limits to prevent
 abuse and ensure fair usage for all users.  
-By default, you can generate up to 30 skins per minute with free credits. If you need to generate more skins, please
-upgrade to a subscription or reach out about increased limits.
+By default, you can generate up to 20 skins per minute. If you need to generate more skins, please
+[upgrade](https://account.mineskin.org/store) to a subscription or reach out about increased limits.
 
 ### Can I host the MineSkin API / Generator myself?
 
@@ -87,7 +85,7 @@ them to the public API to help out everyone using it in terms of speed and relia
 **Please reach out if:**
 
 - you find yourself needing to generate more skins than the public API allows.
-- you can't afford a subscription or credits but need to generate a lot of skins.
+- you can't afford a subscription but need to generate a lot of skins.
 
 
 ## Subscriptions
