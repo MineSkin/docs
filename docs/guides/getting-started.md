@@ -15,7 +15,7 @@ Otherwise, you can start using the API by reading the [API documentation](../min
 ## API Key
  
 To authenticate your requests to the MineSkin API you will need to include your API key in the `Authorization` header.  
-For example `Authorization: Bearer da84de82e960d6c0510088279878c79365ad5118d350d619f20324a5494f156b`  
+For example `Authorization: Bearer msk_Ssx9I4O5_AK_YLAIAXGR5A3osUt6s7jtFUJqGfxbtZBb7i_0hf43b6xmXgsL0SYU5_ARPX7wz`  
 
 
 ## Rate Limits
