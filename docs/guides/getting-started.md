@@ -20,7 +20,7 @@ For example `Authorization: Bearer da84de82e960d6c0510088279878c79365ad5118d350d
 
 ## Rate Limits
 
-Some endpoints have rate limits to prevent abuse. Those endpoints will return a `429 Too Many Requests` status code if you exceed the limit.  
-Most of those endpoints will also return a `X-RateLimit-Limit` and `X-RateLimit-Remaining` header to indicate the limit and how many requests you have left in the current window (usually 1 minute).  
+Some endpoints, specifically all endpoints to generate a skin, have rate limits to prevent abuse. Those endpoints will return a `429 Too Many Requests` status code if you exceed the limit.  
+Most of those endpoints will also return a `X-RateLimit-Limit` and `X-RateLimit-Remaining` header to indicate the limit and how many requests you have left in the current window. You can check the `X-RateLimit-Reset` header to see when the rate limit will reset.
 Some endpoints will also return a `Retry-After` header to indicate how long (in seconds) you have to wait until you can make another request.  
 
