@@ -109,7 +109,8 @@ You can usually find updates on the [Status Page](https://status.mineskin.org/).
 ### How does the rate limit work?
 
 Depending on your plan, you can generate a certain number of new skins per minute. For example, on the free plan,
-you can generate up to 20 skins per minute (1 skin every 3 seconds).
+you can generate up to 20 skins per minute (1 skin every 3 seconds).  
+See the [Rate Limits](../guides/rate-limits) guide for more information on how the rate limits work.
 
 ### How do I use my subscription?
 
