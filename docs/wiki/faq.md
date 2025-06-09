@@ -69,8 +69,9 @@ You can find the API documentation and more information on the [MineSkin Docs](h
 
 Yes. This is largely due to the upstream rate limits imposed by Mojang. MineSkin has its own rate limits to prevent
 abuse and ensure fair usage for all users.  
+See the [Rate Limits](../guides/rate-limits) guide for more information on how the rate limits work.  
 By default, you can generate up to 20 skins per minute. If you need to generate more skins, please
-[upgrade](https://account.mineskin.org/store) to a subscription or reach out about increased limits.
+[upgrade](https://account.mineskin.org/store) to a subscription or reach out about increased limits.  
 
 ### Can I host the MineSkin API / Generator myself?
 
