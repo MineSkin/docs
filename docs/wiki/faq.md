@@ -88,6 +88,21 @@ them to the public API to help out everyone using it in terms of speed and relia
 - you find yourself needing to generate more skins than the public API allows.
 - you can't afford a subscription but need to generate a lot of skins.
 
+### How reliable is the API?
+
+[![API 24h Uptime](https://status.mineskin.org/api/badge/3/uptime)](https://status.mineskin.org)
+[![API 24h Uptime](https://status.mineskin.org/api/badge/3/uptime/720?label=Uptime+(30d)&labelSuffix=d)](https://status.mineskin.org)  
+You can always check the [Status Page](https://status.mineskin.org/) for the current uptime and any ongoing issues.
+
+
+> If your main concern is reliability, rest assured - I'm fully committed to keeping it running for as long as possible!
+I've maintained and updated it for nearly 9 years using my own time and money, and I plan to continue doing so for the foreseeable future.
+That said, there are now also paid plans available to help support the project and cover hosting costs. 🙂
+\-- [Quote from Discord](https://discord.com/channels/398243219961413653/482181005340311552/1367048465292595200)
+
+If MineSkin is ever experiencing downtime, it's often due to Mojang's or Microsoft's servers being overloaded or down, which is unfortunately out of my control.
+You can usually find updates on the [Status Page](https://status.mineskin.org/).
+
 
 ## Subscriptions
 
