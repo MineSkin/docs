@@ -4,6 +4,17 @@ _This changelog is not complete. It only contains the most important changes._
 
 ### 2025
 
+**June 2025**
+- Replaced outdated Mojang API endpoints
+- Added support for Base64-encoded image URLs
+
+**May 2025**
+- Added support for new capes
+- Made cape generation available to paid users
+- Added rate limit reset info to response body and headers
+- Changed `rateLimit.next` info to use the rate limit reset time when the limit is reached
+- Changed skin name length limit to 48 characters
+
 **April 2025**
 - Added support for Account Manager logins with Microsoft accounts
 - New format for API keys
