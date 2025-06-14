@@ -110,7 +110,7 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "mineskin-api/get-user-credits",
           label: "Get user credits",
-          className: "api-method get",
+          className: "menu__list-item--deprecated api-method get",
         },
       ],
     },
