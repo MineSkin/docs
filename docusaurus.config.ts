@@ -204,6 +204,12 @@ const config: Config = {
                 logoClass: "rust",
             },
         ],
+        algolia: {
+            appId: 'KOI67AOD41',
+            apiKey: 'e64977c6eb8cdd6a388a4e3b805820bf',
+            indexName: 'mineskin',
+            contextualSearch: true,
+        },
     } satisfies Preset.ThemeConfig,
 
     plugins: [
