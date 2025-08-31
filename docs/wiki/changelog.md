@@ -4,6 +4,9 @@ _This changelog is not complete. It only contains the most important changes._
 
 ### 2025
 
+**August 2025**
+- Added new /give command formats for Minecraft 1.21/1.21.5
+
 **June 2025**
 - Replaced outdated Mojang API endpoints
 - Added support for Base64-encoded image URLs
