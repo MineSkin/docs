@@ -18,6 +18,19 @@ This commonly happens if you use a URL that points to a webpage instead of an im
 Make sure the URL points to a valid image and try again.  
 If you are requesting an image from your own server, make sure it also handles `HEAD` requests correctly.
 
+<details>
+<summary>Expected Response Headers</summary>
+
+<p>
+Both `GET` and `HEAD` requests to the image URL should return the following headers:
+  
+```
+Content-Type: image/png
+Content-Length: <size in bytes>
+```
+</p>
+</details>
+
 ### invalid_user {#invalid_user}
 The user you provided does not exist or is not valid. 
 #### Solution
