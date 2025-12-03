@@ -30,6 +30,12 @@ const sidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "mineskin-api/list-queue-jobs",
+          label: "List queue jobs",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
           id: "mineskin-api/queue-skin-generation",
           label: "Queue skin generation",
           className: "api-method post",
