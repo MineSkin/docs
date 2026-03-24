@@ -29,6 +29,12 @@
     },
     {
       "name": "skins"
+    },
+    {
+      "name": "capes"
+    },
+    {
+      "name": "user"
     }
   ],
   "security": [
@@ -501,8 +507,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "format": "uuid",
-            "description": "Job ID"
+            "description": "Job ID (Note: not necessarily a UUID)"
           },
           "status": {
             "type": "string",
@@ -525,7 +530,6 @@
             "example": 1726829503123
           },
           "eta": {
-            "required": false,
             "type": "number",
             "description": "Estimated timestamp (in milliseconds) when the job will be completed. Only present after first submitting the job.",
             "example": 1726829603123
@@ -570,17 +574,22 @@
         "properties": {
           "limit": {
             "type": "number",
-            "description": "Limit of requests in the current window (usually 1 minute). Same as the 'X-RateLimit-Limit' header",
+            "description": "Limit of requests in the current window (1 minute/1 hour).",
             "example": 60
           },
           "remaining": {
             "type": "number",
-            "description": "Remaining requests in the current window. Same as the 'X-RateLimit-Remaining' header",
+            "description": "Remaining requests in the current window.",
             "example": 58
+          },
+          "used": {
+            "type": "number",
+            "description": "Number of requests used in the current window.",
+            "example": 2
           },
           "reset": {
             "type": "number",
-            "description": "UNIX epoch timestamp (seconds) when the rate limit will reset. Same as the 'X-RateLimit-Reset' header",
+            "description": "UNIX epoch timestamp (seconds) when the rate limit will reset.",
             "example": 1746869295
           }
         }
@@ -712,7 +721,7 @@
         "properties": {
           "user": {
             "type": "string",
-            "description": "User UUID",
+            "description": "User UUID (stripped)",
             "example": "ef4c52b01fea4715982d8e67fd93ef2d"
           },
           "grants": {
@@ -721,10 +730,13 @@
             "example": {
               "delay": 3,
               "per_minute": 20,
+              "per_hour": 100,
               "concurrency": 1,
               "priority": 0,
               "ad_free": true,
-              "private_skins": true
+              "private_skins": true,
+              "capes": true,
+              "plan": "free"
             }
           }
         }
@@ -827,7 +839,6 @@
         "properties": {
           "absolute": {
             "type": "number",
-            "format": "timestamp",
             "description": "Absolute timestamp (in milliseconds) after which the next request can be made",
             "example": 1726829503123
           },
@@ -848,7 +859,9 @@
         ],
         "properties": {
           "uuid": {
-            "type": "string"
+            "description": "Skin UUID (stripped)",
+            "type": "string",
+            "format": "uuid"
           },
           "name": {
             "type": "string"
@@ -868,15 +881,30 @@
           "name": "Test Skin",
           "visibility": "public",
           "variant": "classic",
-          "views": 1,
-          "duplicate": false
+          "views": 1
+        }
+      },
+      "PerWindowLimitInfo": {
+        "type": "object",
+        "required": [
+          "minute"
+        ],
+        "description": "Rate Limit info for applicable time windows. The 'minute' fields mirror the 'X-Rate-Limit-' headers.",
+        "properties": {
+          "minute": {
+            "$ref": "#/components/schemas/LimitInfo"
+          },
+          "hour": {
+            "$ref": "#/components/schemas/LimitInfo"
+          }
         }
       },
       "RateLimitInfo": {
         "type": "object",
         "required": [
           "next",
-          "delay"
+          "delay",
+          "limit"
         ],
         "properties": {
           "next": {
@@ -886,7 +914,44 @@
             "$ref": "#/components/schemas/DelayInfo"
           },
           "limit": {
-            "$ref": "#/components/schemas/LimitInfo"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PerWindowLimitInfo"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "limit",
+                  "remaining"
+                ],
+                "properties": {
+                  "limit": {
+                    "deprecated": true,
+                    "type": "number",
+                    "description": "Deprecated: Use the fields in 'minute' and 'hour' instead to get information about the individual rate limits.",
+                    "example": 60
+                  },
+                  "remaining": {
+                    "deprecated": true,
+                    "type": "number",
+                    "description": "Deprecated: Use the fields in 'minute' and 'hour' instead to get information about the individual rate limits.",
+                    "example": 58
+                  },
+                  "used": {
+                    "deprecated": true,
+                    "type": "number",
+                    "description": "Deprecated: Use the fields in 'minute' and 'hour' instead to get information about the individual rate limits.",
+                    "example": 2
+                  },
+                  "reset": {
+                    "deprecated": true,
+                    "type": "number",
+                    "description": "Deprecated: Use the fields in 'minute' and 'hour' instead to get information about the individual rate limits.",
+                    "example": 1746869295
+                  }
+                }
+              }
+            ]
           }
         }
       },
@@ -919,7 +984,8 @@
         ],
         "properties": {
           "uuid": {
-            "type": "string"
+            "type": "string",
+            "format": "uuid"
           },
           "name": {
             "type": "string"
@@ -1081,7 +1147,6 @@
       },
       "UsageInfo": {
         "type": "object",
-        "required": [],
         "properties": {
           "credits": {
             "$ref": "#/components/schemas/CreditsUsageInfo"
@@ -1363,7 +1428,9 @@
     },
     "/v2/delay": {
       "get": {
+        "deprecated": true,
         "summary": "Get the current delay",
+        "description": "Deprecated, no longer used with the new queue system.",
         "tags": [
           "delay"
         ],
@@ -1633,42 +1700,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MeClientInfo"
-                }
-              }
-            }
-          },
-          "403": {
-            "$ref": "#/components/responses/ForbiddenErrorResponse"
-          },
-          "404": {
-            "$ref": "#/components/responses/NotFoundErrorResponse"
-          }
-        }
-      }
-    },
-    "/v2/me/credits": {
-      "get": {
-        "deprecated": true,
-        "summary": "Get user credits",
-        "description": "Get information about the current user's credits",
-        "tags": [
-          "user"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/userAgent"
-          },
-          {
-            "$ref": "#/components/parameters/apiKey"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Credits Info",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MeCreditsInfo"
                 }
               }
             }

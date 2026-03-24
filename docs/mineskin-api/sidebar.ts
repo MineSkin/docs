@@ -68,18 +68,6 @@ const sidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "delay",
-      items: [
-        {
-          type: "doc",
-          id: "mineskin-api/get-the-current-delay",
-          label: "Get the current delay",
-          className: "api-method get",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "capes",
       items: [
         {
@@ -112,10 +100,16 @@ const sidebar: SidebarsConfig = {
           label: "Get the current client",
           className: "api-method get",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "delay",
+      items: [
         {
           type: "doc",
-          id: "mineskin-api/get-user-credits",
-          label: "Get user credits",
+          id: "mineskin-api/get-the-current-delay",
+          label: "Get the current delay",
           className: "menu__list-item--deprecated api-method get",
         },
       ],
