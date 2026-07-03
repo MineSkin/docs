@@ -1,0 +1,30 @@
+.card {
+  margin-bottom: 2rem;
+}
+
+.title {
+  margin-bottom: 0.2rem;
+}
+
+.author {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.description {
+  margin: 0 0 0.6rem;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.badges a {
+  display: inline-flex;
+}
+
