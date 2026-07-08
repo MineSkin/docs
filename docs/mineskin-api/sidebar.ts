@@ -22,6 +22,12 @@ const sidebar: SidebarsConfig = {
           label: "Queue skin generation",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "mineskin-api/queue-batch-skin-generation",
+          label: "Queue batch skin generation",
+          className: "api-method post",
+        },
       ],
     },
     {
@@ -38,6 +44,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "mineskin-api/queue-skin-generation",
           label: "Queue skin generation",
+          className: "api-method post",
+        },
+        {
+          type: "doc",
+          id: "mineskin-api/queue-batch-skin-generation",
+          label: "Queue batch skin generation",
           className: "api-method post",
         },
         {
