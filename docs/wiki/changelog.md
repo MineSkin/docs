@@ -2,7 +2,59 @@
 
 _This changelog is not complete. It only contains the most important changes._
 
+### 2026
+
+**October 2026**
+- Added a `/v2/me/capes` endpoint that lists the capes available to the current user
+- Added capes owned by your linked Minecraft accounts to the cape selection on the website
+
+**September 2026**
+- Added support for the Moonlight Trail, Aurora, Hero, and Twisted capes
+- Improved accessibility, keyboard support, and error messages on the website and Account Manager
+
+**August 2026**
+- Removed per-key subscription assignment from the Account Manager (subscriptions automatically apply to all API keys)
+
+**July 2026**
+- Added a batch generation endpoint (early access)
+- Added `support` levels to `/v2/capes`
+- If you are on the Plus plan or higher and have a linked Minecraft account that owns a cape, you can now generate skins with that cape, even if the cape isn't publicly supported
+- Added weekly schedules that automatically enable and disable submitted Minecraft accounts
+- Added semantic skin search, which matches skins by description as well as by name
+- Added the Projects Using MineSkin page to the documentation
+
+**June 2026**
+- Introduction of Teams (beta) to share API keys and subscription benefits
+- Added support for the Builder cape
+- Removed the deprecated credits system for skin generation
+
+**May 2026**
+- Added email sign-up, passkeys, and two-factor authentication to the Account Manager
+- Added options to link sign-in methods and manage active sessions in the Account Manager
+- Skins that you generate on the website before you sign in are now linked to your account when you sign in
+- Removed the hourly limit for Pro and Ultimate plans
+- Implemented automatic scaling of generator capacity and improved queue ETA estimates
+
+**April 2026**
+- Improved how the generator handles Mojang rate limits
+
+**March 2026**
+- Added the Ultimate plan
+
+**February 2026**
+- Added separate per-minute and per-hour rate limit info to the response body
+
 ### 2025
+
+**December 2025**
+- Added support for the Zombie Horse cape
+
+**November 2025**
+- Added support for the Copper cape
+- Added unlimited skin history for paid users
+
+**October 2025**
+- Added timestamp and ETA to job info
 
 **August 2025**
 - Added new /give command formats for Minecraft 1.21/1.21.5
