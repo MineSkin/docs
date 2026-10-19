@@ -512,7 +512,7 @@
           },
           "name": {
             "type": "string",
-            "maxLength": 20
+            "maxLength": 48
           },
           "visibility": {
             "$ref": "#/components/schemas/SkinVisibility"
