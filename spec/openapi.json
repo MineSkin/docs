@@ -1269,6 +1269,30 @@
           }
         }
       },
+      "UserCape": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/KnownCape"
+          },
+          {
+            "type": "object",
+            "required": [
+              "owned",
+              "usable"
+            ],
+            "properties": {
+              "owned": {
+                "type": "boolean",
+                "description": "Whether one of the user's linked Minecraft accounts owns this cape"
+              },
+              "usable": {
+                "type": "boolean",
+                "description": "Whether a generate request by this user with this cape would be accepted"
+              }
+            }
+          }
+        ]
+      },
       "UserGenerateBody": {
         "type": "object",
         "description": "User Generate Request Body",
@@ -1797,6 +1821,49 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFoundErrorResponse"
+          }
+        }
+      }
+    },
+    "/v2/me/capes": {
+      "get": {
+        "summary": "Get capes for the current user",
+        "description": "Get the list of known capes, including whether the current user owns each cape through a linked Minecraft account and whether they can generate with it",
+        "tags": [
+          "user",
+          "capes"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/userAgent"
+          },
+          {
+            "$ref": "#/components/parameters/apiKey"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Cape List",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "capes"
+                  ],
+                  "properties": {
+                    "capes": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UserCape"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/GenericErrorResponse"
           }
         }
       }

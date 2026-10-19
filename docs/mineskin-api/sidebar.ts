@@ -88,6 +88,12 @@ const sidebar: SidebarsConfig = {
           label: "Get a list of known capes",
           className: "api-method get",
         },
+        {
+          type: "doc",
+          id: "mineskin-api/get-capes-for-the-current-user",
+          label: "Get capes for the current user",
+          className: "api-method get",
+        },
       ],
     },
     {
@@ -98,6 +104,12 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "mineskin-api/get-the-current-user",
           label: "Get the current user",
+          className: "api-method get",
+        },
+        {
+          type: "doc",
+          id: "mineskin-api/get-capes-for-the-current-user",
+          label: "Get capes for the current user",
           className: "api-method get",
         },
         {
