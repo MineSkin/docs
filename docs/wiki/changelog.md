@@ -5,6 +5,7 @@ _This changelog is not complete. It only contains the most important changes._
 ### 2026
 
 **October 2026**
+- Added an [MCP server](../guides/04-mcp-server.md) at `https://api.mineskin.org/mcp`, so AI agents can generate and look up skins with your API key
 - Added a `/v2/me/capes` endpoint that lists the capes available to the current user
 - Added capes owned by your linked Minecraft accounts to the cape selection on the website
 
