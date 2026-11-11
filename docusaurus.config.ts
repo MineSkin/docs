@@ -3,6 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
+import { cookieConsentHeadTags } from "./cookieConsent";
 
 const config: Config = {
     title: 'MineSkin Docs',
@@ -55,10 +56,6 @@ const config: Config = {
                 },
                 theme: {
                     customCss: './src/css/custom.css',
-                },
-                gtag: {
-                    trackingID: 'G-XXNGT0HQ7T',
-                    anonymizeIP: true,
                 },
             } satisfies Preset.Options,
         ],
@@ -153,6 +150,10 @@ const config: Config = {
                             label: 'Account Manager',
                             href: 'https://account.mineskin.org',
                         },
+                        {
+                            // opens the cookie consent library's settings (see cookieConsent.ts)
+                            html: '<a class="footer__link-item csconsentlink" href="#" role="button">Cookie settings</a>',
+                        },
                     ],
                 },
             ],
@@ -213,6 +214,15 @@ const config: Config = {
     } satisfies Preset.ThemeConfig,
 
     plugins: [
+        // Cookie consent banner and the Google Analytics tags it controls, in <head>
+        function cookieConsentPlugin() {
+            return {
+                name: 'cookie-consent',
+                injectHtmlTags() {
+                    return {headTags: cookieConsentHeadTags(process.env.NODE_ENV === 'production')};
+                },
+            };
+        },
         [
             'docusaurus-plugin-openapi-docs',
             {
