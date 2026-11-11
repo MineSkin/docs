@@ -35,7 +35,7 @@ const cookieConsentConfig = {
     // en and de are built into the library; these texts are merged over them.
     translations: {
         en: {
-            description: 'With your permission, we use cookies to measure how the docs are used. Your choice applies to all mineskin.org sites, including ads on mineskin.org. You can change it at any time.',
+            description: 'With your permission, we use cookies to measure how the docs are used. Your choice applies to all mineskin.org sites. You can change it at any time.',
             settingsDescription: 'Choose which categories of cookies you allow on all mineskin.org sites. Strictly necessary cookies are always on because the site does not work without them.',
             categories: {
                 strict: {
@@ -50,7 +50,7 @@ const cookieConsentConfig = {
             }
         },
         de: {
-            description: 'Mit Ihrer Erlaubnis verwenden wir Cookies, um die Nutzung der Dokumentation zu messen. Ihre Auswahl gilt für alle mineskin.org-Websites, auch für Werbung auf mineskin.org. Sie können sie jederzeit ändern.',
+            description: 'Mit Ihrer Erlaubnis verwenden wir Cookies, um die Nutzung der Dokumentation zu messen. Ihre Auswahl gilt für alle mineskin.org-Websites. Sie können sie jederzeit ändern.',
             settingsDescription: 'Wählen Sie, welche Cookie-Kategorien Sie auf allen mineskin.org-Websites erlauben. Unbedingt erforderliche Cookies sind immer aktiv, da die Website ohne sie nicht funktioniert.',
             categories: {
                 strict: {
