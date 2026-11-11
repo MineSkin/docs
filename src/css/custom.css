@@ -82,3 +82,18 @@
   background-color: var(--ifm-color-secondary-darkest);
 }
 
+
+/* Cookie consent banner: use the site's colours, which follow light/dark mode.
+   The library sets its defaults on :root and its theme classes, so the ID selector wins. */
+#ccd-root {
+  --ccd-bg: var(--ifm-background-surface-color);
+  --ccd-fg: var(--ifm-font-color-base);
+  --ccd-muted: var(--ifm-color-emphasis-700);
+  --ccd-border: var(--ifm-color-emphasis-300);
+  --ccd-primary: var(--ifm-color-primary);
+  --ccd-primary-fg: var(--ifm-font-color-base-inverse);
+  --ccd-secondary: var(--ifm-color-emphasis-200);
+  --ccd-secondary-fg: var(--ifm-font-color-base);
+  --ccd-toggle: var(--ifm-color-primary);
+  --ccd-font: var(--ifm-font-family-base);
+}
